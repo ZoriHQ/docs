@@ -1,40 +1,75 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Zori
+description: Open source revenue analytics. Know which click became a customer.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Open source revenue analytics. MIT licensed. Free forever.
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /getting-started/quickstart/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/ZoriHQ/zori
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## The Problem
+
+You know your traffic. You don't know your money.
+
+Google Analytics says Twitter is your #1 source. But that blog post from 6 months ago? It's quietly driving $40k/month. You just couldn't see it.
+
+**The gap between visitor and customer is dark.**
+
+## The Answer
+
+Zori watches first touch. Remembers everything. Connects dots when Stripe speaks.
+
+```
+visitor arrives (utm_source=magic)
+     ↓
+zori remembers
+     ↓
+[... time passes ...]
+     ↓
+visitor → customer ($$$)
+     ↓
+"ah, magic brought money"
+```
+
+## What You Get
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Which Channel Pays" icon="star">
+    Stop guessing. See exactly which traffic source turned into a paying customer. Connect the click to the checkout.
+  </Card>
+  <Card title="Time to Convert" icon="clock">
+    How long from first visit to first purchase? Understand your sales cycle. Know when to follow up.
+  </Card>
+  <Card title="Customer Journeys" icon="random">
+    See every touchpoint before conversion. Which pages matter? What path do buyers take?
+  </Card>
+  <Card title="Self-Host Ready" icon="server">
+    Your data, your servers. Open source, MIT licensed. No data leaves if you don't want it to.
+  </Card>
 </CardGrid>
+
+## Quick Start
+
+```bash
+# Clone and deploy
+git clone https://github.com/ZoriHQ/zori.git
+cd zori
+docker-compose up -d
+```
+
+Then add the tracking script to your site:
+
+```html
+<script async src="https://cdn.zorihq.com/script.min.js"
+        data-key="your-publishable-key"></script>
+```
+
+[Read the full quickstart guide →](/getting-started/quickstart/)

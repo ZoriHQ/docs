@@ -1,0 +1,377 @@
+/* PlanetScale-inspired Documentation Styles */
+/* Terminal aesthetic with sharp corners and monospace fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Typography - Monospace everywhere for that terminal feel */
+  --sl-font: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+  --sl-font-system: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+  --sl-font-code: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Remove ALL rounded corners - sharp, technical aesthetic */
+  --sl-border-radius: 0;
+  --sl-corner-radius: 0;
+
+  /* Dark terminal-inspired color scheme */
+  --sl-color-bg: #0a0a0a;
+  --sl-color-bg-nav: #000000;
+  --sl-color-bg-sidebar: #0f0f0f;
+  --sl-color-bg-inline-code: #1a1a1a;
+
+  /* High contrast text for readability */
+  --sl-color-white: #f5f5f5;
+  --sl-color-gray-1: #e0e0e0;
+  --sl-color-gray-2: #c0c0c0;
+  --sl-color-gray-3: #a0a0a0;
+  --sl-color-gray-4: #808080;
+  --sl-color-gray-5: #606060;
+  --sl-color-gray-6: #404040;
+
+  /* Accent color - cyan terminal aesthetic */
+  --sl-color-accent-low: #0a2a2a;
+  --sl-color-accent: #00d4d4;
+  --sl-color-accent-high: #b3ffff;
+
+  /* Additional technical colors */
+  --sl-color-text: #e0e0e0;
+  --sl-color-text-accent: #00d4d4;
+
+  /* Spacing for clean, structured layouts */
+  --sl-content-width: 60rem;
+  --sl-text-h1: 2.5rem;
+  --sl-text-h2: 2rem;
+  --sl-text-h3: 1.5rem;
+  --sl-text-h4: 1.25rem;
+  --sl-text-body: 1rem;
+  --sl-line-height: 1.7;
+}
+
+/* Global font styling - monospace everywhere */
+* {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace !important;
+}
+
+/* Remove rounded corners from ALL elements */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Headings - technical, sharp appearance */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Code blocks - terminal aesthetic */
+pre,
+code {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace !important;
+  border-radius: 0 !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+}
+
+pre {
+  padding: 1.5rem !important;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: #1a1a1a !important;
+  color: #00d4d4 !important;
+  padding: 0.2em 0.5em !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+/* Links - cyan accent */
+a {
+  color: #00d4d4;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: #00d4d4;
+}
+
+a:visited {
+  color: #00d4d4;
+}
+
+/* Active/current navigation links - ensure proper contrast */
+a[aria-current="page"],
+a.active,
+[aria-current="page"] > a {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+  font-weight: 600;
+}
+
+/* Sidebar links - fix visited and active states */
+nav a,
+.sidebar a,
+[data-type="sidebar"] a {
+  color: #e0e0e0;
+}
+
+nav a:visited,
+.sidebar a:visited,
+[data-type="sidebar"] a:visited {
+  color: #e0e0e0;
+}
+
+nav a[aria-current="page"],
+.sidebar a[aria-current="page"],
+[data-type="sidebar"] a[aria-current="page"] {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+  font-weight: 600;
+}
+
+nav a[aria-current="page"]:visited,
+.sidebar a[aria-current="page"]:visited,
+[data-type="sidebar"] a[aria-current="page"]:visited {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+}
+
+/* Buttons and interactive elements - sharp corners */
+button,
+.button,
+[role="button"] {
+  border-radius: 0 !important;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #00d4d4 !important;
+  background: transparent;
+  color: #00d4d4;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.button:hover,
+[role="button"]:hover {
+  background: #00d4d4 !important;
+  color: #0a0a0a !important;
+}
+
+/* Starlight link buttons - fix colors */
+.sl-link-button {
+  border-radius: 0 !important;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+.sl-link-button.primary {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+  border: 2px solid #00d4d4 !important;
+  font-weight: 600 !important;
+}
+
+.sl-link-button.primary:visited {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+}
+
+.sl-link-button.primary:hover {
+  background-color: #0a0a0a !important;
+  color: #00d4d4 !important;
+  border: 2px solid #00d4d4 !important;
+}
+
+.sl-link-button.minimal {
+  background-color: transparent !important;
+  color: #00d4d4 !important;
+  border: 2px solid #00d4d4 !important;
+}
+
+.sl-link-button.minimal:visited {
+  background-color: transparent !important;
+  color: #00d4d4 !important;
+}
+
+.sl-link-button.minimal:hover {
+  background-color: #00d4d4 !important;
+  color: #0a0a0a !important;
+}
+
+/* Cards and containers - no rounded corners */
+.card,
+.sl-card {
+  border-radius: 0 !important;
+  border: 1px solid #333 !important;
+  background-color: #0f0f0f !important;
+  padding: 1.5rem;
+  box-shadow: 2px 2px 0 #00d4d4;
+}
+
+/* Tables - structured, grid-like */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+th,
+td {
+  border: 1px solid #333 !important;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #1a1a1a !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Blockquotes - terminal style */
+blockquote {
+  border-left: 4px solid #00d4d4 !important;
+  border-radius: 0 !important;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  background-color: #0f0f0f;
+  padding: 1rem 1.5rem;
+}
+
+/* Navigation - clean, technical */
+nav {
+  border-radius: 0 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* Search box - terminal input style */
+input[type="search"],
+input[type="text"] {
+  border-radius: 0 !important;
+  border: 2px solid #333 !important;
+  background-color: #0a0a0a !important;
+  color: #e0e0e0 !important;
+  padding: 0.5rem 1rem;
+  font-family: 'IBM Plex Mono', monospace !important;
+  transition: border-color 0.2s ease;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus {
+  border-color: #00d4d4 !important;
+  outline: none;
+}
+
+/* Sidebar styling */
+.sidebar {
+  border-radius: 0 !important;
+  border-right: 1px solid #333 !important;
+}
+
+/* ASCII art support - preserve formatting */
+.ascii-art,
+pre.ascii {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace !important;
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Selection styling - cyan */
+::selection {
+  background-color: #00d4d4;
+  color: #0a0a0a;
+}
+
+::-moz-selection {
+  background-color: #00d4d4;
+  color: #0a0a0a;
+}
+
+/* Scrollbar - minimal, sharp */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4d4;
+}
+
+/* HR - simple line separator */
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2rem 0;
+}
+
+/* Badge/tag styling - sharp technical look */
+.badge,
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid #333 !important;
+  background-color: #1a1a1a !important;
+  color: #00d4d4 !important;
+  border-radius: 0 !important;
+}
+
+/* List styling - clean and structured */
+ul, ol {
+  line-height: 1.8;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Emphasis on technical precision */
+strong, b {
+  font-weight: 700;
+  color: #00d4d4;
+}
+
+em, i {
+  font-style: italic;
+  color: #c0c0c0;
+}
+
+/* Footer - minimal */
+footer {
+  border-top: 1px solid #333 !important;
+  border-radius: 0 !important;
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
